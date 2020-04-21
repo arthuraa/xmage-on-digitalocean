@@ -27,7 +27,7 @@ SSH_READY=1
 
 echo -n "Waiting for SSH.."
 
-while echo -n "." && ! (ssh root@$IP "echo ' SSH ready.'" 2> /dev/null)
+while echo -n "." && ! (ssh -o StrictHostKeyChecking=accept-new root@$IP "echo ' SSH ready.'" 2> /dev/null)
 do
     sleep 2
 done
